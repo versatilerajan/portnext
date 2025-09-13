@@ -2,9 +2,10 @@
 
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import { EffectComposer } from '@react-three/postprocessing'; // Note: This might need adjustment based on exact usage
+import { EffectComposer } from 'three-stdlib/postprocessing/EffectComposer';
 import { RenderPass } from 'three-stdlib/postprocessing/RenderPass';
 import { UnrealBloomPass } from 'three-stdlib/postprocessing/UnrealBloomPass';
+
 
 interface CubeUserData {
   originalY: number;
@@ -19,7 +20,7 @@ export default function CubeGrid() {
   const containerRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<THREE.Scene | null>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
-  const composerRef = useRef<any | null>(null); // Adjusted type due to potential mismatch
+  const composerRef = useRef<EffectComposer | null>(null);
   const animationIdRef = useRef<number | null>(null);
 
   useEffect(() => {
