@@ -25,7 +25,7 @@ export default function SecondPage() {
       {/* Content below the Spline */}
       <div className="second-page-content">
         <p className="description">
-          Crafting Awesome Stories and Killer Designs To Make Brand Stand Out
+          Crafting Awesome Software and Killer ML Model To Make Rajan Stand Out
         </p>
         <div className="cta-buttons">
           <a href="#contact" className="cta-btn primary">Contact Us</a>
