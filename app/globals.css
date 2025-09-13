@@ -10,15 +10,6 @@ body {
   color: #fff;
   overflow-x: hidden;
 }
-.text-left {
-  text-align: left;
-}
-
-.img-center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .container {
   position: relative;
@@ -152,7 +143,45 @@ body {
   overflow: visible; /* Ensure descenders aren't clipped */
   padding: 0.1em 0; /* Top and bottom padding */
 }
+.text-left {
+  text-align: left;
+}
 
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* New styles for grid layout */
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.tech-stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.social-links a, .tech-stack a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover, .tech-stack a:hover {
+  transform: scale(1.1);
+}
 .tags { 
   display: flex; 
   flex-wrap: nowrap; /* Prevents wrapping to new lines */
