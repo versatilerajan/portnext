@@ -14,7 +14,7 @@ export default function AboutSection() {
         I am also experienced with SaaS tools such as Google Cloud, Firebase, Supabase, and Microsoft Azure. I have deployed machine learning models on Google Cloud and set up backends for Android and web applications.
       </p>
       <h3 className="text-left">View My profile on :</h3>
-      <p className="text-left">
+      <div className="social-links">
         <a href="https://codepen.io/rajan-" target="blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/codepen.svg" alt="rajan-" height="30" width="40" className="img-center" /></a>
         <a href="https://twitter.com/sdmrajansingh" target="blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="sdmrajansingh" height="30" width="40" className="img-center" /></a>
         <a href="https://linkedin.com/in/rajan-singh-5a9089295" target="blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="rajan-singh-5a9089295" height="30" width="40" className="img-center" /></a>
@@ -24,9 +24,9 @@ export default function AboutSection() {
         <a href="https://codeforces.com/profile/rajan0001" target="blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/codeforces.svg" alt="rajan0001" height="30" width="40" className="img-center" /></a>
         <a href="https://www.leetcode.com/rajan0001" target="blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg" alt="rajan0001" height="30" width="40" className="img-center" /></a>
         <a href="https://auth.geeksforgeeks.org/user/rajan01" target="blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/geeks-for-geeks.svg" alt="rajan01" height="30" width="40" className="img-center" /></a>
-      </p>
+      </div>
       <h3 className="text-left">Languages and Tools:</h3>
-      <p className="text-left">
+      <div className="tech-stack">
         <a href="https://developer.android.com" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="android" width="40" height="40" className="img-center" /></a>
         <a href="https://angular.io" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original-wordmark.svg" alt="angularjs" width="40" height="40" className="img-center" /></a>
         <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="40" height="40" className="img-center" /></a>
@@ -59,7 +59,7 @@ export default function AboutSection() {
         <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"><img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40" className="img-center" /></a>
         <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40" className="img-center" /></a>
         <a href="https://vuejs.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg" alt="vuejs" width="40" height="40" className="img-center" /></a>
-      </p>
+      </div>
       <div className="footer">
         <p>&copy; 2025 Rajan. All rights reserved.</p>
       </div>
