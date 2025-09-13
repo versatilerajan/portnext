@@ -1,26 +1,407 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 0;
+  /* background-color: #000; */
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.3);
+}
+.nav-links {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 300;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #00d4ff;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #8b5cf6, #00d4ff);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.github-btn {
+  padding: 0.8rem 2rem;
+  border: 1px solid #333;
+  border-radius: 50px;
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.github-btn:hover {
+  border-color: #00d4ff;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4rem;
+  min-height: 100vh;
+}
+
+.spacer {
+  height: 10vh;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.left-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+/* Primary fix - recommended */
+.title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 300;
+  line-height: 1.2; /* Increased from 1.1 to 1.2 */
+  margin-bottom: 5rem;
+  margin-top: 3rem;
+  background: linear-gradient(135deg, #fff 0%, #8b5cf6 50%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-bottom: 0.2em; /* Add padding to prevent clipping of descenders */
+  background-size: 100% 120%; /* Extend background beyond text height */
+  background-position: center top;
+}
+
+/* Alternative fix - use if the above doesn't work */
+.title-alt {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 300;
+  line-height: 1.3;
+  margin-bottom: 5rem;
+  margin-top: 3rem;
+  background: linear-gradient(135deg, #fff 0%, #8b5cf6 50%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block; /* Helps with clipping issues */
+  overflow: visible; /* Ensure descenders aren't clipped */
+  padding: 0.1em 0; /* Top and bottom padding */
+}
+
+.tags { 
+  display: flex; 
+  flex-wrap: nowrap; /* Prevents wrapping to new lines */
+  gap: 2rem; 
+  margin-bottom: 6rem; 
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #999;
+  overflow-x: auto; /* Allows horizontal scrolling if content overflows */
+  white-space: nowrap; /* Prevents text wrapping within each tag */
+} 
+
+.tags a { 
+  text-decoration: none; 
+  color: #999;
+  position: relative;
+  flex-shrink: 0; /* Prevents individual tags from shrinking */
+} 
+
+.tags a:not(:last-child)::after { 
+  content: '\\'; 
+  position: absolute;
+  right: -1rem; 
+  color: #333;
+}
+  
+
+.spline-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* Second Page Section - New styles */
+.second-page-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.second-spline-container {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.second-page-content {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.second-page-content .description {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #ccc;
+  max-width: 600px;
+}
+
+.second-page-content .cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Remove old stacked-section styles */
+.stacked-section {
+  display: none; /* Hide this as we're using the new component */
+}
+
+.spline-half {
+  display: none; /* Hide this as we're using the new component */
+}
+
+.right-content {
+  display: none; /* Hide this as we're using the new component */
+}
+
+.description {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.cta-btn {
+  padding: 1rem 2.5rem;
+  border: 1px solid #333;
+  border-radius: 50px;
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cta-btn.primary {
+  background: linear-gradient(135deg, #8b5cf6, #00d4ff);
+  border: none;
+}
+
+.cta-btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+}
+
+.cta-btn.secondary:hover {
+  border-color: #00d4ff;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+/* About Section */
+.about-section {
+  padding: 4rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  margin: 2rem 0;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #8b5cf6, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.about-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.about-section img {
+  margin-right: 1rem;
+}
+
+/* 3D Canvas */
+#canvas-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* Loading animation */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  transition: opacity 0.5s ease;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #333;
+  border-top: 2px solid #8b5cf6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav {
+    padding: 1rem 2rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .main-content {
+    padding: 2rem;
+    padding-top: 180px; /* More top padding for mobile due to taller navbar */
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .left-content {
+    max-width: 100%;
+  }
+
+  .spline-container {
+    height: 300px;
+  }
+
+  .second-page-section {
+    margin: 2rem 0;
+    gap: 2rem;
+  }
+
+  .second-spline-container {
+    height: 300px;
+  }
+
+  .second-page-content .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-btn {
+    width: 100%;
+  }
+
+  .about-section {
+    padding: 2rem;
+  }
+
+  #canvas-container {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
 }
