@@ -28,8 +28,8 @@ export default function SecondPage() {
           Crafting Awesome Software and Killer ML Model To Make Rajan Stand Out
         </p>
         <div className="cta-buttons">
-          <a href="#contact" className="cta-btn primary">Contact Us</a>
-          <a href="#connect" className="cta-btn secondary">Connect me</a>
+          <a href="mailto:rr791337@gmail.com" class="cta-btn primary">Contact Us</a>
+          <a href="https://www.linkedin.com/in/rajan-singh-5a9089295/" className="cta-btn secondary">Connect me</a>
         </div>
       </div>
     </div>
