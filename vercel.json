@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "name": "rajan-portfolio",
   "builds": [
     {
-      "src": "package.json",
+      "src": "pages/**/*",
+      "use": "@vercel/next"
+    },
+    {
+      "src": "components/**/*",
       "use": "@vercel/next"
     }
   ],
@@ -14,13 +17,6 @@
     }
   ],
   "env": {
-    "NODE_ENV": "production"
-  },
-  "functions": {
-    "app/api/**/*.js": {
-      "maxDuration": 10
-    }
-  },
-  "regions": ["bom1", "sin1"],
-  "framework": "nextjs"
+    "NEXT_PUBLIC_SPLINE_API": "https://prod.spline.design"
+  }
 }
