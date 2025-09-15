@@ -1,5 +1,4 @@
 'use client';
-
 import { useEffect, useState } from 'react';
 import CubeGrid from '@/components/CubeGrid';
 import Navigation from '@/components/Navigation';
@@ -7,26 +6,29 @@ import LoadingSpinner from '@/components/LoadingSpinner';
 import Spline from '@splinetool/react-spline';
 import AboutSection from '@/components/AboutSection';
 import SecondPage from '@/components/Secondpage';
-
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [splineLoaded, setSplineLoaded] = useState(false);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1000/2);
-
     return () => clearTimeout(timer);
   }, []);
 
   const handleSplineLoad = () => {
     setSplineLoaded(true);
   };
-
   return (
     <>
       {isLoading && <LoadingSpinner />}
+      
+      <div className="background-orbs">
+        <div className="orb orb-1"></div>
+        <div className="orb orb-2"></div>
+        <div className="orb orb-3"></div>
+      </div>
+      <CubeGrid />
       <div className="container">
         <Navigation />
         <main className="main-content">
@@ -42,7 +44,6 @@ export default function Home() {
                 <a href="https://gitcred.vercel.app" target="_blank" rel="noopener noreferrer">App Development</a>
               </div>
             </div>
-
             {/* First Spline */}
             <div className="spline-container">
               {!splineLoaded && <LoadingSpinner />}
@@ -52,15 +53,8 @@ export default function Home() {
               />
             </div>
           </div>
-          
-
-          {/* Second Page Component - Now a separate full-width section */}
           <SecondPage />
-          
           <AboutSection />
-          
-          
-          <CubeGrid />
         </main>
       </div>
     </>
